@@ -23,7 +23,7 @@ non-blocking, blocking, if-minor
 Requires [Raycast](https://raycast.com) and Node.js.
 
 ```bash
-git clone git@github.com:brooklynblackshear/conventional-comments-raycast.git
+git clone git@github.com:BrooklynBabylist/conventional-comments-raycast.git
 cd conventional-comments-raycast
 ./setup.sh
 ```
