@@ -1,0 +1,37 @@
+{
+  "name": "conventional-comments",
+  "title": "Conventional Comments",
+  "description": "Quickly insert conventional comment prefixes with labels and decorators",
+  "icon": "command-icon.png",
+  "author": "krzysztofzuraw",
+  "license": "MIT",
+  "commands": [
+    {
+      "name": "insert-comment",
+      "title": "Insert Conventional Comment",
+      "subtitle": "Conventional Comments",
+      "description": "Pick a label and optional decorator, then paste the formatted prefix",
+      "mode": "view"
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.93.3",
+    "@raycast/utils": "^1.19.1"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "^1.0.11",
+    "@types/node": "22.13.14",
+    "@types/react": "19.0.12",
+    "eslint": "^9.23.0",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.2"
+  },
+  "scripts": {
+    "build": "ray build",
+    "dev": "ray develop",
+    "fix-lint": "ray lint --fix",
+    "lint": "ray lint",
+    "prepublishOnly": "echo \"Error: no publish\" && exit 1",
+    "publish": "npx @raycast/api@latest publish"
+  }
+}
