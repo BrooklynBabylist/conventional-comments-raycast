@@ -160,7 +160,7 @@ export function formatBadge(label: string, decorator: string): string {
     return `![${label}](${url})\n`;
   }
 
-  const decoratorHex = findDecorator(decorator)?.hex || "9CA3AF";
+  const decoratorHex = findDecorator(decorator)?.hex ?? "9CA3AF";
   const encodedDecorator = encodeBadgeSegment(decorator);
   const url = `https://img.shields.io/badge/${encodedLabel}-${encodedDecorator}-${decoratorHex}?labelColor=${labelHex}`;
   return `![${label} (${decorator})](${url})\n`;

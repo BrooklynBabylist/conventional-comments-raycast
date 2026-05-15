@@ -23,7 +23,7 @@ your comment here
 
 **Plain text** (fallback for surfaces that don't render images):
 
-```
+```text
 `suggestion (non-blocking):` your comment here
 ```
 
