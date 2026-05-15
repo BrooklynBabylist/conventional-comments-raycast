@@ -79,21 +79,21 @@ export const LABELS: Label[] = [
     description: "Non-blocking observations worth highlighting.",
     icon: Icon.Pencil,
     color: Color.SecondaryText,
-    hex: "94A3B8",
+    hex: "78716C",
   },
   {
     name: "typo",
     description: "A misspelling or grammatical error that should be fixed.",
     icon: Icon.Text,
     color: Color.Yellow,
-    hex: "EAB308",
+    hex: "84CC16",
   },
   {
     name: "polish",
     description: "Refinement to improve quality. Like a suggestion.",
     icon: Icon.Wand,
     color: Color.Blue,
-    hex: "0EA5E9",
+    hex: "EC4899",
   },
 ];
 
