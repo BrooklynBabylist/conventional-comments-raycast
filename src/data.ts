@@ -59,7 +59,7 @@ export const LABELS: Label[] = [
     name: "todo",
     description: "Small, necessary changes that must happen.",
     icon: Icon.Checkmark,
-    color: Color.Orange,
+    color: Color.Magenta,
     hex: "E879F9", // fuchsia-400
   },
   {
@@ -74,7 +74,7 @@ export const LABELS: Label[] = [
     description:
       "Ideas sparked by the review. Non-blocking, good for mentoring.",
     icon: Icon.Bubble,
-    color: Color.Magenta,
+    color: Color.SecondaryText,
     hex: "6B7280", // gray-500
   },
   {
@@ -102,7 +102,7 @@ export const LABELS: Label[] = [
     name: "polish",
     description: "Refinement to improve quality. Like a suggestion.",
     icon: Icon.Wand,
-    color: Color.Blue,
+    color: Color.Magenta,
     hex: "EC4899", // pink-500
   },
 ];
