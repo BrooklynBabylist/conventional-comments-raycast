@@ -52,7 +52,7 @@ Then open Raycast and search for **"Insert Conventional Comment"**.
 
 - `Enter` on a label → pick a decorator
 - `Cmd+Enter` on a label → paste immediately without a decorator (preferred format)
-- `Cmd+B` → paste in the *other* format (badge ↔ plain)
+- `Cmd+B` → paste in the _other_ format (badge ↔ plain)
 - `Cmd+Shift+C` → copy in preferred format instead of pasting
 - `Cmd+Shift+B` → copy in the other format
 - `Cmd+I` → toggle a preview panel showing the rendered badge and plain text side-by-side
