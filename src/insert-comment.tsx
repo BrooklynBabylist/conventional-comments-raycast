@@ -7,7 +7,9 @@ import {
 } from "@raycast/api";
 import { useState } from "react";
 import {
+  FORMAT_LABEL,
   LABELS,
+  OTHER_FORMAT,
   formatBadge,
   formatComment,
   formatPlain,
@@ -18,9 +20,6 @@ import { DecoratorList } from "./components/DecoratorList";
 interface Preferences {
   defaultFormat: Format;
 }
-
-const OTHER: Record<Format, Format> = { badge: "plain", plain: "badge" };
-const LABEL: Record<Format, string> = { badge: "Badge", plain: "Plain" };
 
 function previewMarkdown(label: string): string {
   return [
@@ -38,7 +37,7 @@ function previewMarkdown(label: string): string {
 
 export default function InsertComment() {
   const { defaultFormat } = getPreferenceValues<Preferences>();
-  const other = OTHER[defaultFormat];
+  const other = OTHER_FORMAT[defaultFormat];
   const [showDetail, setShowDetail] = useState(false);
 
   return (
@@ -58,22 +57,22 @@ export default function InsertComment() {
                 target={<DecoratorList label={label.name} />}
               />
               <Action.Paste
-                title={`Insert Without Decorator (${LABEL[defaultFormat]})`}
+                title={`Insert Without Decorator (${FORMAT_LABEL[defaultFormat]})`}
                 content={formatComment(label.name, "none", defaultFormat)}
                 shortcut={{ modifiers: ["cmd"], key: "return" }}
               />
               <Action.Paste
-                title={`Insert Without Decorator (${LABEL[other]})`}
+                title={`Insert Without Decorator (${FORMAT_LABEL[other]})`}
                 content={formatComment(label.name, "none", other)}
                 shortcut={{ modifiers: ["cmd"], key: "b" }}
               />
               <Action.CopyToClipboard
-                title={`Copy Without Decorator (${LABEL[defaultFormat]})`}
+                title={`Copy Without Decorator (${FORMAT_LABEL[defaultFormat]})`}
                 content={formatComment(label.name, "none", defaultFormat)}
                 shortcut={{ modifiers: ["cmd", "shift"], key: "c" }}
               />
               <Action.CopyToClipboard
-                title={`Copy Without Decorator (${LABEL[other]})`}
+                title={`Copy Without Decorator (${FORMAT_LABEL[other]})`}
                 content={formatComment(label.name, "none", other)}
                 shortcut={{ modifiers: ["cmd", "shift"], key: "b" }}
               />

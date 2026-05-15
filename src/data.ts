@@ -2,6 +2,16 @@ import { Color, Icon } from "@raycast/api";
 
 export type Format = "badge" | "plain";
 
+export const OTHER_FORMAT: Record<Format, Format> = {
+  badge: "plain",
+  plain: "badge",
+};
+
+export const FORMAT_LABEL: Record<Format, string> = {
+  badge: "Badge",
+  plain: "Plain",
+};
+
 export interface Label {
   name: string;
   description: string;
