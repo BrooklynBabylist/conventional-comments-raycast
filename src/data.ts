@@ -32,42 +32,42 @@ export const LABELS: Label[] = [
     description: "Highlights something positive. At least one per review.",
     icon: Icon.Star,
     color: Color.Green,
-    hex: "28A745",
+    hex: "28A745", // green (matches pullpo)
   },
   {
     name: "nitpick",
     description: "Trivial, preference-based requests. Non-blocking by default.",
     icon: Icon.Dot,
     color: Color.Yellow,
-    hex: "F59E0B",
+    hex: "F59E0B", // amber-500
   },
   {
     name: "suggestion",
     description: "Proposes improvements to the current subject.",
     icon: Icon.LightBulb,
     color: Color.Blue,
-    hex: "3B82F6",
+    hex: "3B82F6", // blue-500
   },
   {
     name: "issue",
     description: "Highlights a specific problem that needs to be addressed.",
     icon: Icon.ExclamationMark,
     color: Color.Red,
-    hex: "EF4444",
+    hex: "EF4444", // red-500
   },
   {
     name: "todo",
     description: "Small, necessary changes that must happen.",
     icon: Icon.Checkmark,
     color: Color.Orange,
-    hex: "E879F9",
+    hex: "E879F9", // fuchsia-400
   },
   {
     name: "question",
     description: "Potential concern phrased as a question.",
     icon: Icon.QuestionMark,
     color: Color.Purple,
-    hex: "8B5CF6",
+    hex: "8B5CF6", // violet-500
   },
   {
     name: "thought",
@@ -75,35 +75,35 @@ export const LABELS: Label[] = [
       "Ideas sparked by the review. Non-blocking, good for mentoring.",
     icon: Icon.Bubble,
     color: Color.Magenta,
-    hex: "6B7280",
+    hex: "6B7280", // gray-500
   },
   {
     name: "chore",
     description: "Simple tasks that must be done before acceptance.",
     icon: Icon.Hammer,
     color: Color.Orange,
-    hex: "F97316",
+    hex: "F97316", // orange-500
   },
   {
     name: "note",
     description: "Non-blocking observations worth highlighting.",
     icon: Icon.Pencil,
     color: Color.SecondaryText,
-    hex: "78716C",
+    hex: "78716C", // stone-500
   },
   {
     name: "typo",
     description: "A misspelling or grammatical error that should be fixed.",
     icon: Icon.Text,
     color: Color.Yellow,
-    hex: "84CC16",
+    hex: "84CC16", // lime-500
   },
   {
     name: "polish",
     description: "Refinement to improve quality. Like a suggestion.",
     icon: Icon.Wand,
     color: Color.Blue,
-    hex: "EC4899",
+    hex: "EC4899", // pink-500
   },
 ];
 
@@ -116,17 +116,17 @@ export const DECORATORS: Decorator[] = [
   {
     name: "non-blocking",
     description: "Should not prevent merge/acceptance.",
-    hex: "9CA3AF",
+    hex: "9CA3AF", // gray-400
   },
   {
     name: "blocking",
     description: "Must be resolved before merge/acceptance.",
-    hex: "374151",
+    hex: "374151", // gray-700
   },
   {
     name: "if-minor",
     description: "Resolve only if the fix is trivial.",
-    hex: "14B8A6",
+    hex: "14B8A6", // teal-500
   },
 ];
 
