@@ -5,7 +5,14 @@ import {
   List,
   getPreferenceValues,
 } from "@raycast/api";
-import { LABELS, formatComment, type Format } from "./data";
+import { useState } from "react";
+import {
+  LABELS,
+  formatBadge,
+  formatComment,
+  formatPlain,
+  type Format,
+} from "./data";
 import { DecoratorList } from "./components/DecoratorList";
 
 interface Preferences {
@@ -15,18 +22,34 @@ interface Preferences {
 const OTHER: Record<Format, Format> = { badge: "plain", plain: "badge" };
 const LABEL: Record<Format, string> = { badge: "Badge", plain: "Plain" };
 
+function previewMarkdown(label: string): string {
+  return [
+    "## Preview",
+    "",
+    formatBadge(label, "none").trim(),
+    "",
+    "## Plain text",
+    "",
+    "```",
+    formatPlain(label, "none").trim(),
+    "```",
+  ].join("\n");
+}
+
 export default function InsertComment() {
   const { defaultFormat } = getPreferenceValues<Preferences>();
   const other = OTHER[defaultFormat];
+  const [showDetail, setShowDetail] = useState(false);
 
   return (
-    <List searchBarPlaceholder="Search labels...">
+    <List searchBarPlaceholder="Search labels..." isShowingDetail={showDetail}>
       {LABELS.map((label) => (
         <List.Item
           key={label.name}
           title={label.name}
-          subtitle={label.description}
+          subtitle={showDetail ? undefined : label.description}
           icon={{ source: label.icon, tintColor: label.color }}
+          detail={<List.Item.Detail markdown={previewMarkdown(label.name)} />}
           actions={
             <ActionPanel>
               <Action.Push
@@ -53,6 +76,12 @@ export default function InsertComment() {
                 title={`Copy Without Decorator (${LABEL[other]})`}
                 content={formatComment(label.name, "none", other)}
                 shortcut={{ modifiers: ["cmd", "shift"], key: "b" }}
+              />
+              <Action
+                title={showDetail ? "Hide Preview" : "Show Preview"}
+                icon={Icon.Eye}
+                onAction={() => setShowDetail((d) => !d)}
+                shortcut={{ modifiers: ["cmd"], key: "i" }}
               />
             </ActionPanel>
           }
