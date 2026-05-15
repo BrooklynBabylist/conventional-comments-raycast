@@ -14,6 +14,26 @@
       "mode": "view"
     }
   ],
+  "preferences": [
+    {
+      "name": "defaultFormat",
+      "title": "Default Format",
+      "description": "How comment prefixes are formatted. Override per-paste with Cmd+B.",
+      "type": "dropdown",
+      "required": false,
+      "default": "badge",
+      "data": [
+        {
+          "title": "Badge (shields.io)",
+          "value": "badge"
+        },
+        {
+          "title": "Plain text",
+          "value": "plain"
+        }
+      ]
+    }
+  ],
   "dependencies": {
     "@raycast/api": "^1.93.3",
     "@raycast/utils": "^1.19.1"

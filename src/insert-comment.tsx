@@ -1,8 +1,24 @@
-import { Action, ActionPanel, Icon, List } from "@raycast/api";
-import { LABELS, DECORATORS, formatComment } from "./data";
+import {
+  Action,
+  ActionPanel,
+  Icon,
+  List,
+  getPreferenceValues,
+} from "@raycast/api";
+import { LABELS, formatComment, type Format } from "./data";
 import { DecoratorList } from "./components/DecoratorList";
 
+interface Preferences {
+  defaultFormat: Format;
+}
+
+const OTHER: Record<Format, Format> = { badge: "plain", plain: "badge" };
+const LABEL: Record<Format, string> = { badge: "Badge", plain: "Plain" };
+
 export default function InsertComment() {
+  const { defaultFormat } = getPreferenceValues<Preferences>();
+  const other = OTHER[defaultFormat];
+
   return (
     <List searchBarPlaceholder="Search labels...">
       {LABELS.map((label) => (
@@ -19,14 +35,24 @@ export default function InsertComment() {
                 target={<DecoratorList label={label.name} />}
               />
               <Action.Paste
-                title="Insert Without Decorator"
-                content={formatComment(label.name, "none")}
+                title={`Insert Without Decorator (${LABEL[defaultFormat]})`}
+                content={formatComment(label.name, "none", defaultFormat)}
                 shortcut={{ modifiers: ["cmd"], key: "return" }}
               />
+              <Action.Paste
+                title={`Insert Without Decorator (${LABEL[other]})`}
+                content={formatComment(label.name, "none", other)}
+                shortcut={{ modifiers: ["cmd"], key: "b" }}
+              />
               <Action.CopyToClipboard
-                title="Copy Without Decorator"
-                content={formatComment(label.name, "none")}
+                title={`Copy Without Decorator (${LABEL[defaultFormat]})`}
+                content={formatComment(label.name, "none", defaultFormat)}
                 shortcut={{ modifiers: ["cmd", "shift"], key: "c" }}
+              />
+              <Action.CopyToClipboard
+                title={`Copy Without Decorator (${LABEL[other]})`}
+                content={formatComment(label.name, "none", other)}
+                shortcut={{ modifiers: ["cmd", "shift"], key: "b" }}
               />
             </ActionPanel>
           }
